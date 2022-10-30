@@ -86,7 +86,7 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {"default": {"ENGINE": env.dj_db_url("DATABASE_URL")}}
+DATABASES = {"default": env.dj_db_url("DATABASE_URL")}
 
 
 # Password validation
@@ -141,7 +141,6 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 TIME_ZONE = "America/Denver"
 
 DEBUG = env.bool("DEBUG", default=False)
-
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
